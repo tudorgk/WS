@@ -1,0 +1,10 @@
+#!/home/tudorgk/Desktop/WS/env/bin/python3
+# EASY-INSTALL-ENTRY-SCRIPT: 'GoogleScraper==0.1.36','console_scripts','GoogleScraper'
+__requires__ = 'GoogleScraper==0.1.36'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('GoogleScraper==0.1.36', 'console_scripts', 'GoogleScraper')()
+    )
