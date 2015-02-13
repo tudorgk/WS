@@ -1,0 +1,57 @@
+\title{WS 2015 Project 1:\\Web Size \\Due by: 17 February 2015, 23h55}
+
+\date{}
+\documentclass[10pt]{article}
+\usepackage{color}
+\usepackage[colorlinks,citecolor=blue]{hyperref}
+
+
+\begin{document}
+\maketitle
+
+\textbf{\color{red}This project counts towards 30\% of your final grade for this course.}
+
+\section{Project description}
+You will be given:
+
+\begin{enumerate}
+%\item A \textbf{twitter log} from XXX. Note: the file is a bit large. Also, this data is unfiltered and may contain objectionable content.
+\item An \textbf{article} by Lawrence and Giles (1998) entitled: \textit{Searching the World Wide Web} \cite{LawLee1998}. You must carefully read this article in order to understand and carry out this project. This article is attached at the end of this document.
+\item A \textbf{template} file that you should use for writing your report (pdf + latex sources). The pdf of the template is attached at the end of this document. The latex sources of the template are on Absalon (/Projects/Project1/).
+\item A list of \textbf{500 queries} that you must use to carry out this project.
+\end{enumerate}
+
+This project asks you to carry out a size estimation of the indexable Web using the approach presented by Lawrence and Giles in \cite{LawLee1998}. Lawrence and Giles \cite{LawLee1998} estimated the size of the indexable Web in 1998 using the results of 6 different search engine in response to 575 queries. You must replicate their approach in order to estimate the size of the indexable web today. For this, you must use search results from these 3 search engines: Google, Bing, and Baidu, in response to a list of 500 queries (available on Absalon). You must follow the methodology of Lawrence and Giles \cite{LawLee1998}, i.e. apply the same constraints and overlap analysis. Use these estimations of web coverage: 48 billion webpages by Google, 14 billion webpages by Bing, and 740 million webpages by Baidu. You may not be able to retrieve all results from every query. You should therefore retrieve as much data as possible from each search engine and perform the experiments using the following three approaches:
+
+\begin{itemize}
+\item Repeat the experiments five times each time using a random subset of 300 queries out of the 500.
+\item Use the 300 queries which resulted in the most search results.
+\item Use the 300 queries which resulted in the fewest search results.
+\end{itemize}
+
+Report your findings by presenting equivalent tables to Tables 1-2, equivalent figures to Figures 1-3 in \cite{LawLee1998}, and a corresponding discussion. Your report should include the sections specified in the template file (introduction, methodology, findings, and conclusions). You can use any tools you want, including your own programs, commercial or public domain tools like Unix commands. 
+
+
+\section{Submission}
+%You must submit \textbf{a single tar.gz file} that contains: (i) your report in pdf (not the latex sources), formatted according to the template, and (ii) the source code that you used to perform the relevance feedback (i.e. your programs, commands etc.). \textbf{Everything in your submission must be anonymous} (i.e., do not write your name in the report or your code). There are no length restrictions for the report, however it must contain \textbf{all the sections in the template} (plus any more sections you wish to add). Your submission must be uploaded to Dropbox by 06 January 2015, 23h55 at the latest.
+\subsection{What to submit}
+You must submit \textbf{a single tar.gz file} that contains: 
+\begin{enumerate}
+\item your report in pdf (not the latex sources), formatted according to the template, and 
+\item the source code that you used to perform the relevance feedback (i.e. your programs, commands etc.).
+\end{enumerate}
+\textbf{Everything in your submission must be anonymous} (i.e., do not write your name in the report or your code). There are no length restrictions for the report, however it must contain \textbf{all the sections in the template}, plus any more sections you wish to add. 
+
+\subsection{How to submit}
+\begin{itemize}
+\item You must upload your submission to Absalon \textbf{by 17 February 2015, 23h55, at the latest}.
+\item If you are unable to submit via Absalon for some reason, you must send your submission by e-mail to ingemar.cox@di.ku.dk \underline{\textbf{with cc to}} \\ brian.brost@di.ku.dk and nhansen@di.ku.dk \textbf{by 17 February 2015, 23h55, at the latest}.
+\item Submissions received after the deadline without prior approval for e.g.\ medical reasons or similar, by I.\ Cox, will not take part in the peer-assessment. This results in an immediate -20\% reduction of your final portfolio grade (15\% for the peer-assessment you will not make + 5\% for your missing amendment list - see the \textit{Portfolio Guidelines} for details).
+
+\end{itemize}
+
+
+\bibliographystyle{abbrv}
+\bibliography{citations} 
+
+\end{document}
