@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  20 FEB 2015 19:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  20 FEB 2015 19:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -450,19 +450,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
  []
 
 
-Overfull \hbox (53.85327pt too wide) in paragraph at lines 68--69
-\T1/aer/m/n/9 more than 17 bil-lion pages [https://www.ventureharbour.com/visua
-lising-
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[][][]\T1/aer/m/n/9 https://www.ventureharbour.com/visualising-size-google-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
- []
-
-
-Overfull \hbox (23.07365pt too wide) in paragraph at lines 70--71
-\T1/aer/m/n/9 is Google-Scraper[https://github.com/NikolaiT/GoogleScraper](A
  []
 
 
@@ -476,20 +470,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--75
  []
 
 
-Overfull \hbox (23.02925pt too wide) in paragraph at lines 76--77
-\T1/aer/m/n/9 fer-ent pages (for ex-am-ple www.baidu.com/safiahsiohasda4124124)
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
  []
 
-
-Underfull \vbox (badness 4279) has occurred while \output is active []
-
- [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+[1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
@@ -519,26 +504,27 @@ Package rerunfilecheck Info: File `assignment-1.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 139.
  ) 
 Here is how much of TeX's memory you used:
- 6836 strings out of 493117
- 95500 string characters out of 6135433
- 191272 words of memory out of 5000000
- 10180 multiletter control sequences out of 15000+600000
- 48375 words of font info for 65 fonts, out of 8000000 for 9000
+ 6848 strings out of 493117
+ 95618 string characters out of 6135433
+ 192333 words of memory out of 5000000
+ 10183 multiletter control sequences out of 15000+600000
+ 50528 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,35p,976b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,35p,1023b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/tex
-live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texliv
-e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/
-2014/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2014/te
-xmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dis
-t/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/ty
-pe1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/ti
-mes/utmri8a.pfb>
-Output written on assignment-1.pdf (2 pages, 96910 bytes).
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2
+014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/201
+4/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2014/texmf
+-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist/f
+onts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
+/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times
+/utmri8a.pfb>
+Output written on assignment-1.pdf (2 pages, 105273 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
+ 98 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
  49 words of extra memory for PDF output out of 10000 (max. 10000000)
 
