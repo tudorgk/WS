@@ -96,7 +96,7 @@ After crawling roughly 27 000 pages across 3 search engines the GoogleScraper pr
 \caption{Total and Unique URLs scraped}
 \end{table}
 
-As we can see from Table 2 there are great discrepancies between the 3 search engines. Yandex only retrieves 465 URLs compared to the other two which have dominant numbers (roughly between 51 000 and 60 000 links). Yandex has 
+As we can see from Table 2 there are great discrepancies between the 3 search engines. Yandex only retrieves 465 URLs compared to the other two which have dominant numbers (roughly between 51 000 and 60 000 links). From comparing the numbers it seems that GoogleScraper does not work well when crawling with the Yandex search engine. Another problem seems to be with the links retrieved from Baidu. These links are not direct links to pages but instead they are assigned a token that is relevant only to Baidu's routing infrastructure. Thus, we cannot conduct a proper comparison on what links are duplicated between the 3 search engines. When intersecting the Yandex results with Bing's we get only 11 common links. This value is simply too small to draw a conclusion on how relevant the results are. 
 
 % Please add the following required packages to your document preamble:
 % \usepackage[table,xcdraw]{xcolor}
