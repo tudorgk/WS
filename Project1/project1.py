@@ -12,21 +12,43 @@ from GoogleScraper.database import ScraperSearch, SERP, Link
 
 ### EXAMPLES OF HOW TO USE GoogleScraper ###
 
+import random
+
+def generate_sub_queries (numberOfQueries):
+
+    with open('queries.txt') as f:  
+        lines = random.sample(f.readlines(),numberOfQueries)
+
+    text_file = open("subqueries.txt", "w")
+
+    for line in lines:
+        text_file.write("%s" % line)
+
+    text_file.close()
+
 # very basic usage
 def basic_usage():
     # See in the config.cfg file for possible values
+    generate_sub_queries(300)
+
     config = {
         'SCRAPING': {
             'use_own_ip': 'True',
-            'keyword': 'Let\'s go bubbles!',
-            'search_engines': 'yandex',
-            'num_pages_for_keyword': 1
+            'keyword_file': "queries.txt",
+            'search_engines': 'bing,baidu,yandex',
+            'num_workers': 8,
+            'num_pages_for_keyword': 20,
+            'scrape_method' : 'http',
         },
         'SELENIUM': {
             'sel_browser': 'chrome',
+            'num_workers': 4,
         },
         'GLOBAL': {
-            'do_caching': 'False'
+            'do_caching': 'True'
+        },
+        'OUTPUT': {
+            'output_filename': 'out.txt',
         }
     }
 
@@ -37,11 +59,11 @@ def basic_usage():
 
     # let's inspect what we got
 
-    for search in sqlalchemy_session.query(ScraperSearch).all():
-        for serp in search.serps:
-            print(serp)
-            for link in serp.links:
-                print(link)
+    # for search in sqlalchemy_session.query(ScraperSearch).all():
+    #     for serp in search.serps:
+    #         print(serp)
+    #         for link in serp.links:
+    #             print(link)
 
 
 # simulating a image search for all search engines that support image search
