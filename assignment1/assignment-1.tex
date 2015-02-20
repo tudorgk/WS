@@ -39,6 +39,7 @@
 
 \documentclass{sig-alternate}
 \usepackage{color}
+ \usepackage[table,xcdraw]{xcolor}
 \usepackage[colorlinks,citecolor=blue]{hyperref}
 
 \begin{document}
@@ -64,42 +65,59 @@ Another way of crawling the web in search was presented by Brian and Alvin Moore
 
 \section{Methodology}
 
-The methodology I used for estimating the size of the web is very similar to Giles and Lawrence's approach from 1998. For crawling the web I used 500 queries and 3 search engines. The search engines that were considered for this experiment are: Bing, Baidu and Yandex. I have used these ones because Google, Yahoo! and other bigger search engines have protection mechanisms that prevent artificil polling of search results. If the crawler request to many searches in a short amount of time, Google enforces a cooldown period for additional queries. In 2014, Bing reports that it has indexed more than 17 billion pages [https://www.ventureharbour.com/visualising-size-google-bing-yahoo/s]. Baidu has indexed over 740 million web pages, 80 million images, and 10 million multimedia files. [ "MSN Money – BIDU". MSN Money. Archived from the original on May 1, 2006. Retrieved 2006-05-11.]. Yandex has around 15 billion indexed pages[Project description].\\
+The methodology I used for estimating the size of the web is very similar to Giles and Lawrence's approach from 1998. For crawling the web I used 500 queries and 3 search engines. The search engines that were considered for this experiment are: Bing, Baidu and Yandex. I have used these ones because Google, Yahoo! and other bigger search engines have protection mechanisms that prevent artificial polling of search results. If the crawler request to many searches in a short amount of time, Google enforces a cool down period for additional queries. In 2014, Bing reports that it has indexed more than 17 billion pages [https://www.ventureharbour.com/visualising-size-google-bing-yahoo/s]. Baidu has indexed over 740 million web pages, 80 million images, and 10 million multimedia files. [ "MSN Money – BIDU". MSN Money. Archived from the original on May 1, 2006. Retrieved 2006-05-11.]. Yandex has around 15 billion indexed pages[Project description].\\
 
-The software that I used for crawling these search engines is GoogleScraper[https://github.com/NikolaiT/GoogleScraper](A Python module to scrape several search engines (like Google, Yandex, Bing, Duckduckgo, Baidu and others) by using proxies (socks4/5, http proxy) and with many different IP's, including asynchronous networking support). It worked decent enough for carrying out this assignment and it has some extra features that helped improve performance during crawling (for example multi-threding support). The experiment was carried out in a time span of 2 days of non-stop crawling and data gathering.\\ 
+The software that I used for crawling these search engines is GoogleScraper[https://github.com/NikolaiT/GoogleScraper](A Python module to scrape several search engines (like Google, Yandex, Bing, Duckduckgo, Baidu and others) by using proxies (socks4/5, http proxy) and with many different IP's, including asynchronous networking support). It worked decent enough for carrying out this assignment and it has some extra features that helped improve performance during crawling (for example multithreading support). The experiment was carried out in a time span of 2 days of non-stop crawling and data gathering.\\ 
 
 \subsection{Crawling Particularities}
 
-For each of the 500 queries I retrieve 20 pages of results. Twenty pages seemd sufficient for retrieving relative search results, because search engines often retrive similar results for queries and not the actual query term. Each page contains between 10-15 results. GoogleScraper scrapes the three search engines in the same time with 10 worker threads. GoogleScrapes saves the URLs in the google\_scraper.db SQL database. After finishing all 30000 keywords we begin analyzing the newly created database of links, references, search terms and serach engines to make an estimation on how big is the Web.\\
+For each of the 500 queries I retrieve 20 pages of results. Twenty pages seemed sufficient for retrieving relative search results, because search engines often retrieve similar results for queries and not the actual query term. Each page contains between 10-15 results. GoogleScraper scrapes the three search engines in the same time with 10 worker threads. GoogleScrapes saves the URLs in the google\_scraper.db SQL database. After finishing all 30000 keywords we begin analyzing the newly created database of links, references, search terms and search engines to make an estimation on how big is the Web.\\
 
-To create a realistic estimate of the size of the Web, based on the current parameters, we would be checking the unique links retrived by the crawler. Some links are redirects to different pages (for example www.baidu.com/safiahsiohasda4124124) we will leave them out of the data analysis because we don not know if the links would take us to the same pages that other search engines have retrieved for us. Also, because we are comparing links relative to actual documents we do not know if the pages contain the same information themselves. This will have an impact on the estimate of our web size. In 'Searching the world wide web' they state that they download each page and check that the query term occurs in the document. This is a very high computational task and we would require different hardware in order to obtain the same results.\\
+To create a realistic estimate of the size of the Web, based on the current parameters, we would be checking the unique links retrieved by the crawler. Some links are redirects to different pages (for example www.baidu.com/safiahsiohasda4124124) we will leave them out of the data analysis because we don not know if the links would take us to the same pages that other search engines have retrieved for us. Also, because we are comparing links relative to actual documents we do not know if the pages contain the same information themselves. This will have an impact on the estimate of our web size. In 'Searching the world wide web' they state that they download each page and check that the query term occurs in the document. This is a very high computational task and we would require different hardware in order to obtain the same results.\\
 
-Unfortunately after crawling for two days, I realised that bing and baidu have autocorrection by default and they would retrive the same results for two different queries. For example the queries "apple" and "aple" will retun the same search results. This omission greatly impacts our search results.\\
+Unfortunately after crawling for two days, I realized that bing and Baidu have autocorrection by default and they would retrieve the same results for two different queries. For example the queries "apple" and "aple" will return the same search results. This omission greatly impacts our search results.\\
 
 \section{Findings}
-Report your findings in tables and figures (equivalent to Tables 1-2 and Figures 1-3 in \cite{LawLee1998}). You must also discuss these tables and figures.
+
+After crawling roughly 27 000 pages across 3 search engines the GoogleScraper program had managed to retrieve 179875 URLs. Out of these URLs only 110 478 are usable in our experiment because the script had some problems when generating request using the 127.0.0.1 IP address. The requests sent by that IP address had all entries for the search engines NULL. Thus we cannot conduct an analyzing only the URL because we don not know from what search engine it came from. Out of 110 478 links only 65 565 are unique.\\
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\rowcolor[HTML]{000000} 
+{\color[HTML]{FFFFFF} URLs} & {\color[HTML]{FFFFFF} Scraped} & {\color[HTML]{FFFFFF} Usable} \\ \hline
+\textbf{Total URLs}         & 179 875                        & 110 478                       \\ \hline
+\textbf{Unique URLs}        & 69 385                         & 65 565                        \\ \hline
+\end{tabular}
+\caption{Total and Unique URLs scraped}
+\end{table}
+
+As we can see from Table 2 there are great discrepancies between the 3 search engines. Yandex only retrieves 465 URLs compared to the other two which have dominant numbers (roughly between 51 000 and 60 000 links). Yandex has 
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\rowcolor[HTML]{343434} 
+{\color[HTML]{FFFFFF} \textbf{Search Engine}} & {\color[HTML]{FFFFFF} \textbf{Bing}} & {\color[HTML]{FFFFFF} \textbf{Baidu}} & {\color[HTML]{FFFFFF} \textbf{Yandex}} \\
+\textbf{Total URLs}                           & 58 130                               & 51 883                                & 465                                    \\ \hline
+\textbf{Unique URLs}                          & 13 241                               & 51 870                                 & 465                                  \\ \hline 
+\end{tabular}
+\caption{URLs categorized by search engine}
+\end{table}
+
 
 
 \section{Conclusions}
 Describe your conclusions. 
 
-\begin{table}
-\centering
-\caption{Toy table. Use this as a template for making your own tables.}
-\begin{tabular}{|c|c|l|} \hline
-Non-English or Math&Frequency&Comments\\ \hline
-\O & 1 in 1,000& For Swedish names\\ \hline
-$\pi$ & 1 in 5& Common in math\\ \hline
-\$ & 4 in 5 & Used in business\\ \hline
-$\Psi^2_1$ & 1 in 40,000& Unexplained usage\\
-\hline\end{tabular}
-\end{table}
-
-\begin{figure}
-\centering
-\epsfig{file=fly.eps}
-\caption{Toy figure. Use this as a template for making your own figures.}
-\end{figure}
 
 % The following two commands are all you need in the
 % initial runs of your .tex file to
